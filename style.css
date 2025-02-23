@@ -1,0 +1,234 @@
+/* General Styles */
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg,#e9d62c, #163669,#4669a1,#61779b, #c2e9fb); /* Soft gradient */
+    text-align: center;
+    padding: 50px;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Glassmorphic Container */
+.container {
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px); /* Glass effect */
+    background: rgba(255, 255, 255, 0.2); /* Transparent white */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease-in-out;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Title */
+h1 {
+    font-size: 26px;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Input and Button */
+.input-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+input {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.4); /* Glass effect */
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+    text-align: center;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+input:focus {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+}
+
+/* Search Button */
+button {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Answer Box */
+#results {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    text-align: left;
+    white-space: pre-wrap;
+    min-height: 50px;
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.25);
+    border-left: 5px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    transition: 0.3s;
+}
+
+/* Loading Animation */
+.loading {
+    font-size: 18px;
+    color: white;
+    animation: fade 1s infinite alternate;
+}
+
+@keyframes fade {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}
+
+/* Dark Mode */
+.dark-mode {
+    background: linear-gradient(135deg, #1e1e1e, #292929);
+}
+
+.dark-mode .container {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode input {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.dark-mode button {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode button:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.dark-mode #results {
+    background: rgba(255, 255, 255, 0.1);
+    border-left: 5px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Dark Mode Toggle */
+#darkModeToggle {
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+#darkModeToggle:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .input-container {
+        flex-direction: column;
+    }
+    
+    input {
+        width: 100%;
+    }
+    
+    button {
+        width: 100%;
+    }
+}
+
+/* Recent Searches Styling */
+#recent-searches-container {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.2);
+    border-left: 4px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    width: 100%;
+    max-width: 785px;
+}
+
+#recent-searches-container h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+#recent-searches {
+    list-style: none;
+    padding: 0;
+}
+
+#recent-searches li {
+    padding: 8px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    transition: 0.3s;
+}
+
+#recent-searches li:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-left: 4px solid white;
+    padding-left: 10px;
+}
+
+#category {
+    position: relative; /* Ensures positioning works */
+    padding: 10px 10px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.3); /* Semi-transparent */
+    backdrop-filter: blur(10px); /* Blurs the background */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    color: white; /* Text color */
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+}
+
+/* Style dropdown options */
+#category option {
+    position: relative; /* Ensures positioning works */
+    padding: 10px 10px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent */
+    backdrop-filter: blur(10px); /* Blurs the background */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    color: white; /* Text color */
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+}
+
+#category:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
