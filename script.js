@@ -1,4 +1,4 @@
-const API_KEY = "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"; // Replace with your OpenAI API Key
+const API_KEY = "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"; // Replace with your OpenAI API Key
 
 document.addEventListener("DOMContentLoaded", function () {
     let searchButton = document.getElementById("search-button");
