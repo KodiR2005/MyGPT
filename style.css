@@ -148,17 +148,18 @@ button:hover {
 }
 
 /* Responsive Design */
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
     .input-container {
         flex-direction: column;
     }
     
     input {
-        width: 100%;
+        width: 75%;
+        margin-bottom: 5px;
     }
     
     button {
-        width: 100%;
+        width: 98%;
     }
 }
 
@@ -171,7 +172,7 @@ button:hover {
     background: rgba(255, 255, 255, 0.2);
     border-left: 4px solid rgba(255, 255, 255, 0.4);
     color: white;
-    width: 100%;
+    width: 95%;
     max-width: 1745px;
 }
 
